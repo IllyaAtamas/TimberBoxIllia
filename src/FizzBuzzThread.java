@@ -1,7 +1,7 @@
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
-public class FizzBuzzThread extends Thread {
+public class FizzBuzzThread {
     private final int n;
     private final BlockingQueue<String> queue;
 
@@ -47,19 +47,6 @@ public class FizzBuzzThread extends Thread {
             if (!isDivisibleBy3(i) && !isDivisibleBy5(i)) {
                 queue.put(Integer.toString(i));
             }
-        }
-    }
-
-    @Override
-    public void run() {
-        try {
-            fizz();
-            buzz();
-            fizzbuzz();
-            number();
-            queue.put("Готово");
-        } catch (InterruptedException e) {
-            e.printStackTrace();
         }
     }
 }
